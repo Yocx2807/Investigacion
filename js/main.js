@@ -35,6 +35,43 @@ $(document).on("click", "#menuEstudiante", function () {
     });
   }
 
+  $(document).ready(function () {
+    // Mostrar formulario
+    $("#btnCrearEstudiante").click(function () {
+      $("#formCrearEstudiante").toggleClass("d-none");
+    });
+  
+    // Guardar estudiante
+    $("#btnGuardarEstudiante").click(function () {
+      let datos = {
+        nombre: $("#nombre").val(),
+        correo: $("#correo").val(),
+        telefono: $("#telefono").val(),
+        cedula: $("#cedula").val()
+      };
+  
+      $.ajax({
+        url: "https://paginas-web-cr.com/ApiPHP/apis/InsertarEstudiantes.php",
+        type: "POST",
+        data: JSON.stringify(datos),
+        contentType: "application/json",
+        success: function (respuesta) {
+          alert("Estudiante creado exitosamente.");
+          $("#formCrearEstudiante").addClass("d-none");
+          $("#formCrearEstudiante input").val("");
+          cargarEstudiantes(); // Esta función debe existir y recargar la tabla
+        },
+        error: function () {
+          alert("Error al crear el estudiante.");
+        }
+      });
+    });
+  });
+
+
+  
+  
+
 
   $(document).on("click", "#menuProfesor", function () {
     $("#modalProfesor").modal("show");
@@ -118,7 +155,7 @@ $(document).on("click", "#menuEstudiante", function () {
   
   function cargarCursos() {
     $.ajax({
-      url: "https://paginas-web-cr.com/Api/apis/ListaCursos.php",
+      url: "https://paginas-web-cr.com/ApiPHP/apis/ListaCursos.php",
       type: "GET",
       dataType: "json",
       success: function (respuesta) {

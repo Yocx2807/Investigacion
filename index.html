@@ -48,6 +48,28 @@
         </div>
         <div class="modal-body">
           <button id="btnCrearEstudiante" class="btn btn-success mb-3">Crear Estudiante</button>
+          <div id="formCrearEstudiante" class="mb-4 d-none">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" required>
+              </div>
+              <div class="col-md-6">
+                <label for="correo" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="correo" required>
+              </div>
+              <div class="col-md-6 mt-2">
+                <label for="telefono" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="telefono" required>
+              </div>
+              <div class="col-md-6 mt-2">
+                <label for="cedula" class="form-label">Cédula</label>
+                <input type="text" class="form-control" id="cedula" required>
+              </div>
+            </div>
+            <button id="btnGuardarEstudiante" class="btn btn-primary mt-3">Guardar Estudiante</button>
+          </div>
+          
           <table class="table table-bordered table-striped">
             <thead class="table-dark">
               <tr>
