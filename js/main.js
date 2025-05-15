@@ -51,14 +51,22 @@ $(document).on("click", "#menuEstudiante", function () {
       };
   
       $.ajax({
-        url: "https://paginas-web-cr.com/ApiPHP/apis/InsertarEstudiantes.php",
+        url: "https://paginas-web-cr.com/Api/apis/InsertarEstudiantes.php",
         type: "POST",
         data: JSON.stringify(datos),
         contentType: "application/json",
         success: function (respuesta) {
+          console.log(respuesta); // Ver si el nuevo estudiante aparece aquí
+          let estudiantes = respuesta.data;
           alert("Estudiante creado exitosamente.");
           $("#formCrearEstudiante").addClass("d-none");
           $("#formCrearEstudiante input").val("");
+
+          // Esperar 500ms antes de recargar
+          setTimeout(() => {
+            cargarEstudiantes();
+          }, 500);
+
           cargarEstudiantes(); // Esta función debe existir y recargar la tabla
         },
         error: function () {
