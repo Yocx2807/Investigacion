@@ -21,8 +21,8 @@
 
   <!-- Contenido principal -->
   <main class="container my-4" id="mainContainer">
-    <h2>Bienvenido al sistema</h2>
-    <p>Selecciona una opción del menú para comenzar.</p>
+    <h2>Bienvenido al Sistema Web de Matricula</h2>
+    <p>Selecciona un modulo del menú para comenzar.</p>
   </main>
 
   <!-- Footer -->
@@ -99,6 +99,28 @@
         </div>
         <div class="modal-body">
           <button id="btnCrearProfesor" class="btn btn-success mb-3">Crear Profesor</button>
+          <div id="formCrearProfesor" class="mb-4 d-none">
+            <div class="row">
+              <div class="col-md-6">
+                <label for="nombreProfesor" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombreProfesor" required>
+              </div>
+              <div class="col-md-6">
+                <label for="correoProfesor" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="correoProfesor" required>
+              </div>
+              <div class="col-md-6 mt-2">
+                <label for="telefonoProfesor" class="form-label">Teléfono</label>
+                <input type="text" class="form-control" id="telefonoProfesor" required>
+              </div>
+              <div class="col-md-6 mt-2">
+                <label for="cedulaProfesor" class="form-label">Cédula</label>
+                <input type="text" class="form-control" id="cedulaProfesor" required>
+              </div>
+            </div>
+            <button id="btnGuardarProfesor" class="btn btn-primary mt-3">Guardar Profesor</button>
+          </div>
+
           <table class="table table-bordered table-striped">
             <thead class="table-dark">
               <tr>
@@ -129,6 +151,18 @@
         </div>
         <div class="modal-body">
           <button id="btnCrearGrupo" class="btn btn-success mb-3">Crear Grupo</button>
+          <div id="formCrearGrupo" class="mb-4 d-none">
+          <div class="mb-3">
+            <label for="nombreGrupo" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombreGrupo" required>
+          </div>
+          <div class="mb-3">
+            <label for="cursoIdGrupo" class="form-label">ID del Curso</label>
+            <input type="number" class="form-control" id="cursoIdGrupo" required>
+          </div>
+          <button id="btnGuardarGrupo" class="btn btn-primary">Guardar Grupo</button>
+        </div>
+
           <table class="table table-bordered table-striped">
             <thead class="table-dark">
               <tr>
@@ -157,6 +191,18 @@
         </div>
         <div class="modal-body">
           <button id="btnCrearCurso" class="btn btn-success mb-3">Crear Curso</button>
+          <div id="formCrearCurso" class="mb-4 d-none">
+            <div class="mb-3">
+              <label for="nombreCurso" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombreCurso" required>
+            </div>
+            <div class="mb-3">
+              <label for="descripcionCurso" class="form-label">Descripción</label>
+              <textarea class="form-control" id="descripcionCurso" rows="3" required></textarea>
+            </div>
+            <button id="btnGuardarCurso" class="btn btn-primary">Guardar Curso</button>
+          </div>
+
           <table class="table table-bordered table-striped">
             <thead class="table-dark">
               <tr>
